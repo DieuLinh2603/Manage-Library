@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LVN">
+  <DataContextMoniker Name="/LVNDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4a50b56e-ef44-41cd-ba06-f3bcff845a2c" absoluteBounds="6.125, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LVNDataContext/DocGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="465a842a-c3b7-4975-9574-b8ff40186cdf" absoluteBounds="6.14, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fecd222c-341b-48a0-961e-e65cdd0e5917" absoluteBounds="3.875, 3.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LVNDataContext/Sach" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8361c98-db00-41ca-88ef-1a029d06fad9" absoluteBounds="3.8899999999999997, 3.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f1cf523-4163-4f48-823a-2e31ab5a4d0a" absoluteBounds="1, 4, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LVNDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8bfdcb4-74b0-4a22-9f85-a114c29c38b4" absoluteBounds="1.0150000000000001, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c45f6a71-f537-421e-9a30-046e30ed1eff" absoluteBounds="2.75, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LVNDataContext/LichSuMuonTraSach" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc8c5cfa-e00e-402e-8268-2615fb92b813" absoluteBounds="2.7649999999999997, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 1.57294840494792); (4.75 : 1.57294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LVNDataContext/DocGia/DocGia_LichSuMuonTraSach" />
+      <nodes>
+        <classShapeMoniker Id="4a50b56e-ef44-41cd-ba06-f3bcff845a2c" />
+        <classShapeMoniker Id="c45f6a71-f537-421e-9a30-046e30ed1eff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.28125 : 3.125); (4.28125 : 2.27089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LVNDataContext/Sach/Sach_LichSuMuonTraSach" />
+      <nodes>
+        <classShapeMoniker Id="fecd222c-341b-48a0-961e-e65cdd0e5917" />
+        <classShapeMoniker Id="c45f6a71-f537-421e-9a30-046e30ed1eff" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
