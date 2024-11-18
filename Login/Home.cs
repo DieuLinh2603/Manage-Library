@@ -59,7 +59,7 @@ namespace Login
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            Application.Exit();
         }
 
         private void thêmĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)

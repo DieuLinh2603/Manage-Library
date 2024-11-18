@@ -12,7 +12,7 @@ namespace Login
 {
     public partial class Form1 : Form
     {
-        LoginDataContext dataContext = new LoginDataContext();
+        LVNDataContext dataContext = new LVNDataContext();
         public Form1()
         {
             InitializeComponent();
