@@ -247,6 +247,13 @@
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "NGUYỄN",
+            "BÌNH ĐỊNH",
+            "BÌNH DƯƠNG",
+            "HÀ NỘI",
+            "tpcm",
+            "AN LÃO"});
             this.comboBox1.Location = new System.Drawing.Point(205, 243);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(243, 24);

@@ -34,6 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -112,6 +112,14 @@
             this.panel2.Size = new System.Drawing.Size(638, 429);
             this.panel2.TabIndex = 3;
             // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox4.Location = new System.Drawing.Point(227, 223);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(243, 22);
+            this.textBox4.TabIndex = 21;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -146,7 +154,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox5.Location = new System.Drawing.Point(227, 281);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(243, 22);
@@ -154,7 +162,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox3.Location = new System.Drawing.Point(227, 170);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(243, 22);
@@ -162,7 +170,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox1.Location = new System.Drawing.Point(227, 118);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(243, 22);
@@ -175,9 +183,10 @@
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(40, 277);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 25);
+            this.label8.Size = new System.Drawing.Size(63, 25);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Ngành";
+            this.label8.Text = "Khoa";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -214,7 +223,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox2.Location = new System.Drawing.Point(227, 63);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(243, 22);
@@ -230,14 +239,6 @@
             this.label4.Size = new System.Drawing.Size(75, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "Số thẻ";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox4.Location = new System.Drawing.Point(227, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(243, 22);
-            this.textBox4.TabIndex = 21;
             // 
             // Add_Readers
             // 
