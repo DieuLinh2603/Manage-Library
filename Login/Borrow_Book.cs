@@ -14,6 +14,7 @@ namespace Login
 {
     public partial class Borrow_Book : Form
     {
+        LVNDataContext db = new LVNDataContext();
         public Borrow_Book()
         {
             InitializeComponent();
@@ -22,9 +23,9 @@ namespace Login
 
         private void Borrow_Book_Load(object sender, EventArgs e)
         {
-            using (thlvnDataContext dt = new thlvnDataContext())
+            using (db)
             {
-                var kq = dt.Saches.Select(l => l.TenSach).ToList();
+                var kq = db.Saches.Select(l => l.TenSach).ToList();
 
                 // Đổ dữ liệu vào ComboBox
                 cbbTenSach.DataSource = kq;
@@ -48,12 +49,12 @@ namespace Login
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (thlvnDataContext dt = new thlvnDataContext())
+            using (db)
             {
                 int soThe;
                 if (int.TryParse(txtSoThe.Text, out soThe))
                 {
-                    var kq = dt.DocGias.FirstOrDefault(p => p.SoThe.Equals(soThe));
+                    var kq = db.DocGias.FirstOrDefault(p => p.SoThe.Equals(soThe));
                     if (kq != null)
                     {
                         txtHoTen.Text = kq.HoTen;
@@ -108,26 +109,26 @@ namespace Login
 
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
-            using(thlvnDataContext dt = new thlvnDataContext())
+            using(db)
     {
                 string ten = cbbTenSach.Text;
                 int sothe = int.Parse(txtSoThe.Text);
                 DateTime ngayMuon = DateTime.Parse(dtNgayMuon.Text);
 
                 // Lấy mã sách của cuốn sách mượn
-                int kq = (from i in dt.Saches
+                int kq = (from i in db.Saches
                           where i.TenSach.Equals(ten)
                           select i.MaSach).FirstOrDefault();
 
                 // Kiểm tra nếu sách tồn tại trong bảng Saches
-                var sach = dt.Saches.FirstOrDefault(s => s.MaSach == kq);
+                var sach = db.Saches.FirstOrDefault(s => s.MaSach == kq);
                 if (sach != null && sach.SoLuong > 0)
                 {
                     // Giảm số lượng sách trong bảng Saches
                     sach.SoLuong -= 1;
 
                     // Lưu thay đổi vào bảng Saches
-                    dt.SubmitChanges();
+                    db.SubmitChanges();
 
                     // Thêm thông tin mượn sách vào bảng LichSuMuonTraSach
                     LichSuMuonTraSach ls = new LichSuMuonTraSach();
@@ -136,8 +137,8 @@ namespace Login
                     ls.NgayMuon = ngayMuon;
                     ls.NgayTra = null;
 
-                    dt.LichSuMuonTraSaches.InsertOnSubmit(ls);
-                    dt.SubmitChanges();
+                    db.LichSuMuonTraSaches.InsertOnSubmit(ls);
+                    db.SubmitChanges();
 
                     MessageBox.Show("Đã thêm lịch sử mượn trả sách thành công.");
                 }

@@ -14,6 +14,7 @@ namespace Login
 {
     public partial class Return_Book : Form
     {
+        LVNDataContext db = new LVNDataContext();
         public Return_Book()
         {
             InitializeComponent();
@@ -21,11 +22,11 @@ namespace Login
 
         void loadData()
         {
-            using (thlvnDataContext ts = new thlvnDataContext())
+            using (db)
             {
-                dgvTraSach.DataSource = from i in ts.Saches
-                                        from y in ts.DocGias
-                                        from z in ts.LichSuMuonTraSaches
+                dgvTraSach.DataSource = from i in db.Saches
+                                        from y in db.DocGias
+                                        from z in db.LichSuMuonTraSaches
                                         where i.MaSach == z.MaSach && y.SoThe == z.SoThe
                                         select new
                                         {
@@ -43,17 +44,17 @@ namespace Login
         private void btnSearch_Click(object sender, EventArgs e)
         {
             
-            using(thlvnDataContext dt = new thlvnDataContext())
+            using(db)
             {
                 int soThe;
                 if (int.TryParse(txtSoThe.Text, out soThe))
                 {
-                    var kq = dt.LichSuMuonTraSaches.FirstOrDefault(p => p.SoThe.Equals(soThe));
+                    var kq = db.LichSuMuonTraSaches.FirstOrDefault(p => p.SoThe.Equals(soThe));
                     if (kq != null)
                     {
-                        dgvTraSach.DataSource = from i in dt.Saches
-                                                from y in dt.DocGias
-                                                from z in dt.LichSuMuonTraSaches
+                        dgvTraSach.DataSource = from i in db.Saches
+                                                from y in db.DocGias
+                                                from z in db.LichSuMuonTraSaches
                                                 where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe
                                                 select new
                                                 {
@@ -120,29 +121,29 @@ namespace Login
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            using (thlvnDataContext dt = new thlvnDataContext())
+            using (db)
             {
                 DateTime ngayTra = DateTime.Parse(dtNgayTra.Text);
                 int sothe = int.Parse(txtSoThe.Text);  
                 string tenSach = txtTenSach.Text; 
 
-                int maSach = (from s in dt.Saches
+                int maSach = (from s in db.Saches
                               where s.TenSach.Equals(tenSach)
                               select s.MaSach).FirstOrDefault();
 
-                LichSuMuonTraSach ls = dt.LichSuMuonTraSaches
+                LichSuMuonTraSach ls = db.LichSuMuonTraSaches
                                          .FirstOrDefault(l => l.SoThe == sothe && l.MaSach == maSach && l.NgayTra == null);
 
                 if (ls != null)
                 {
                     ls.NgayTra = ngayTra;
-                    dt.SubmitChanges();
+                    db.SubmitChanges();
 
-                    Sach sach = dt.Saches.FirstOrDefault(s => s.MaSach == maSach);
+                    Sach sach = db.Saches.FirstOrDefault(s => s.MaSach == maSach);
                     if (sach != null)
                     {
                         sach.SoLuong += 1;
-                        dt.SubmitChanges();
+                        db.SubmitChanges();
                         MessageBox.Show("Đã trả sách thành công.");
                     }
                     else
