@@ -59,7 +59,15 @@ namespace Login
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            DialogResult f = MessageBox.Show("Bạn có thực sự muốn thoát không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(f == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Thoat khong thanh cong, vui long thu lai");
+            }
         }
 
         private void thêmĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
