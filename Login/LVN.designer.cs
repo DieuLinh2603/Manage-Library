@@ -22,8 +22,8 @@ namespace Login
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="THLVN_Data")]
-	public partial class thlvnDataContext : System.Data.Linq.DataContext
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LVN")]
+	public partial class LVNDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -39,33 +39,36 @@ namespace Login
     partial void InsertSach(Sach instance);
     partial void UpdateSach(Sach instance);
     partial void DeleteSach(Sach instance);
+    partial void InsertTaiKhoan(TaiKhoan instance);
+    partial void UpdateTaiKhoan(TaiKhoan instance);
+    partial void DeleteTaiKhoan(TaiKhoan instance);
     #endregion
 		
-		public thlvnDataContext() : 
-				base(global::Login.Properties.Settings.Default.THLVN_DataConnectionString, mappingSource)
+		public LVNDataContext() : 
+				base(global::Login.Properties.Settings.Default.LVNConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public thlvnDataContext(string connection) : 
+		public LVNDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public thlvnDataContext(System.Data.IDbConnection connection) : 
+		public LVNDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public thlvnDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public LVNDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public thlvnDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public LVNDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -92,6 +95,14 @@ namespace Login
 			get
 			{
 				return this.GetTable<Sach>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TaiKhoan> TaiKhoans
+		{
+			get
+			{
+				return this.GetTable<TaiKhoan>();
 			}
 		}
 	}
@@ -753,6 +764,92 @@ namespace Login
 		{
 			this.SendPropertyChanging();
 			entity.Sach = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TaiKhoan")]
+	public partial class TaiKhoan : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TaiKhoan1;
+		
+		private string _MatKhau;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTaiKhoan1Changing(string value);
+    partial void OnTaiKhoan1Changed();
+    partial void OnMatKhauChanging(string value);
+    partial void OnMatKhauChanged();
+    #endregion
+		
+		public TaiKhoan()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="TaiKhoan", Storage="_TaiKhoan1", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TaiKhoan1
+		{
+			get
+			{
+				return this._TaiKhoan1;
+			}
+			set
+			{
+				if ((this._TaiKhoan1 != value))
+				{
+					this.OnTaiKhoan1Changing(value);
+					this.SendPropertyChanging();
+					this._TaiKhoan1 = value;
+					this.SendPropertyChanged("TaiKhoan1");
+					this.OnTaiKhoan1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatKhau", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MatKhau
+		{
+			get
+			{
+				return this._MatKhau;
+			}
+			set
+			{
+				if ((this._MatKhau != value))
+				{
+					this.OnMatKhauChanging(value);
+					this.SendPropertyChanging();
+					this._MatKhau = value;
+					this.SendPropertyChanged("MatKhau");
+					this.OnMatKhauChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

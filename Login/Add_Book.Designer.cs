@@ -77,7 +77,6 @@
             this.label2.Size = new System.Drawing.Size(184, 60);
             this.label2.TabIndex = 3;
             this.label2.Text = "SÁCH";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -163,7 +162,6 @@
             this.button4.TabIndex = 18;
             this.button4.Text = "Thêm";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dateTimePicker1
             // 
@@ -173,6 +171,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(243, 27);
             this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // pictureBox3
             // 

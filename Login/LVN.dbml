@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="THLVN_Data" Class="thlvnDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-UBBD7AN\NGUYENDUYTHINH;Initial Catalog=THLVN_Data;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="Login.Properties.Settings" SettingsPropertyName="THLVN_DataConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LVN" Class="LVNDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI\SQLEXPRESS;Initial Catalog=LVN;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Login.Properties.Settings" SettingsPropertyName="LVNConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DocGia" Member="DocGias">
     <Type Name="DocGia">
       <Column Name="SoThe" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -31,6 +31,12 @@
       <Column Name="GiaSach" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Sach_LichSuMuonTraSach" Member="LichSuMuonTraSaches" ThisKey="MaSach" OtherKey="MaSach" Type="LichSuMuonTraSach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="TaiKhoan" Member="TaiKhoan1" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
