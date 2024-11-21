@@ -116,7 +116,7 @@ namespace Login
 
         private void Return_Book_Load(object sender, EventArgs e)
         {
-            
+            panel2.Hide();
         }
 
         private void btnTraSach_Click(object sender, EventArgs e)
@@ -145,6 +145,9 @@ namespace Login
                         sach.SoLuong += 1;
                         db.SubmitChanges();
                         MessageBox.Show("Đã trả sách thành công.");
+                        dgvTraSach.Rows.Clear();
+                        txtSoThe.Clear();
+                        panel2.Hide();
                     }
                     else
                     {
@@ -181,8 +184,14 @@ namespace Login
 
         private void dgvTraSach_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            panel2.Show();
             txtTenSach.Text = dgvTraSach.CurrentRow.Cells[4].Value.ToString();
             txtNgayMuon.Text = dgvTraSach.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
     }
 }

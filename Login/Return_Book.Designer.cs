@@ -37,12 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dgvTraSach = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnThoat2 = new System.Windows.Forms.Button();
-            this.btnTraSach = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +44,15 @@
             this.Tensach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtNgayTra = new System.Windows.Forms.DateTimePicker();
-            this.txtTenSach = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.txtNgayMuon = new System.Windows.Forms.TextBox();
+            this.txtTenSach = new System.Windows.Forms.TextBox();
+            this.dtNgayTra = new System.Windows.Forms.DateTimePicker();
+            this.btnThoat2 = new System.Windows.Forms.Button();
+            this.btnTraSach = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraSach)).BeginInit();
@@ -174,6 +174,62 @@
             this.dgvTraSach.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraSach_CellContentDoubleClick);
             this.dgvTraSach.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvTraSach_MouseDoubleClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 125;
+            // 
+            // SoThe
+            // 
+            this.SoThe.DataPropertyName = "SoThe";
+            this.SoThe.HeaderText = "Số Thẻ";
+            this.SoThe.MinimumWidth = 6;
+            this.SoThe.Name = "SoThe";
+            this.SoThe.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ Tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 125;
+            // 
+            // Tensach
+            // 
+            this.Tensach.DataPropertyName = "TenSach";
+            this.Tensach.HeaderText = "Tên sách";
+            this.Tensach.MinimumWidth = 6;
+            this.Tensach.Name = "Tensach";
+            this.Tensach.Width = 125;
+            // 
+            // NgayMuon
+            // 
+            this.NgayMuon.DataPropertyName = "NgayMuon";
+            this.NgayMuon.HeaderText = "Ngày Mượn";
+            this.NgayMuon.MinimumWidth = 6;
+            this.NgayMuon.Name = "NgayMuon";
+            this.NgayMuon.Width = 125;
+            // 
+            // NgayTra
+            // 
+            this.NgayTra.DataPropertyName = "NgayTra";
+            this.NgayTra.HeaderText = "Ngày Trả";
+            this.NgayTra.MinimumWidth = 6;
+            this.NgayTra.Name = "NgayTra";
+            this.NgayTra.Width = 125;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
@@ -189,6 +245,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(765, 200);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // txtNgayMuon
+            // 
+            this.txtNgayMuon.Location = new System.Drawing.Point(321, 87);
+            this.txtNgayMuon.Name = "txtNgayMuon";
+            this.txtNgayMuon.Size = new System.Drawing.Size(243, 22);
+            this.txtNgayMuon.TabIndex = 17;
+            // 
+            // txtTenSach
+            // 
+            this.txtTenSach.Location = new System.Drawing.Point(321, 34);
+            this.txtTenSach.Name = "txtTenSach";
+            this.txtTenSach.Size = new System.Drawing.Size(243, 22);
+            this.txtTenSach.TabIndex = 16;
+            this.txtTenSach.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTenSach_MouseClick);
+            // 
+            // dtNgayTra
+            // 
+            this.dtNgayTra.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgayTra.CalendarMonthBackground = System.Drawing.SystemColors.ButtonFace;
+            this.dtNgayTra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtNgayTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayTra.Location = new System.Drawing.Point(321, 133);
+            this.dtNgayTra.Name = "dtNgayTra";
+            this.dtNgayTra.Size = new System.Drawing.Size(243, 30);
+            this.dtNgayTra.TabIndex = 15;
+            this.dtNgayTra.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnThoat2
             // 
@@ -255,90 +340,6 @@
             this.label4.Size = new System.Drawing.Size(102, 25);
             this.label4.TabIndex = 1;
             this.label4.Text = "Tên sách";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // SoThe
-            // 
-            this.SoThe.DataPropertyName = "SoThe";
-            this.SoThe.HeaderText = "Số Thẻ";
-            this.SoThe.MinimumWidth = 6;
-            this.SoThe.Name = "SoThe";
-            this.SoThe.Width = 125;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ Tên";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 125;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 125;
-            // 
-            // Tensach
-            // 
-            this.Tensach.DataPropertyName = "TenSach";
-            this.Tensach.HeaderText = "Tên sách";
-            this.Tensach.MinimumWidth = 6;
-            this.Tensach.Name = "Tensach";
-            this.Tensach.Width = 125;
-            // 
-            // NgayMuon
-            // 
-            this.NgayMuon.DataPropertyName = "NgayMuon";
-            this.NgayMuon.HeaderText = "Ngày Mượn";
-            this.NgayMuon.MinimumWidth = 6;
-            this.NgayMuon.Name = "NgayMuon";
-            this.NgayMuon.Width = 125;
-            // 
-            // NgayTra
-            // 
-            this.NgayTra.DataPropertyName = "NgayTra";
-            this.NgayTra.HeaderText = "Ngày Trả";
-            this.NgayTra.MinimumWidth = 6;
-            this.NgayTra.Name = "NgayTra";
-            this.NgayTra.Width = 125;
-            // 
-            // dtNgayTra
-            // 
-            this.dtNgayTra.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtNgayTra.CalendarMonthBackground = System.Drawing.SystemColors.ButtonFace;
-            this.dtNgayTra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtNgayTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayTra.Location = new System.Drawing.Point(321, 133);
-            this.dtNgayTra.Name = "dtNgayTra";
-            this.dtNgayTra.Size = new System.Drawing.Size(243, 30);
-            this.dtNgayTra.TabIndex = 15;
-            this.dtNgayTra.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // txtTenSach
-            // 
-            this.txtTenSach.Location = new System.Drawing.Point(321, 34);
-            this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.Size = new System.Drawing.Size(243, 22);
-            this.txtTenSach.TabIndex = 16;
-            this.txtTenSach.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTenSach_MouseClick);
-            // 
-            // txtNgayMuon
-            // 
-            this.txtNgayMuon.Location = new System.Drawing.Point(321, 87);
-            this.txtNgayMuon.Name = "txtNgayMuon";
-            this.txtNgayMuon.Size = new System.Drawing.Size(243, 22);
-            this.txtNgayMuon.TabIndex = 17;
             // 
             // Return_Book
             // 
