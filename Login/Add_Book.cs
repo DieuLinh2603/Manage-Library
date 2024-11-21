@@ -19,13 +19,13 @@ namespace Login
         private void btnThem_Click(object sender, EventArgs e)
         {
             // Kiểm tra các ô nhập liệu không rỗng
-            if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtTheLoai.Text != "" && txtNamXuatBan.Text != "" && txtGia.Text != "" && txtSoLuong.Text != "")
+            if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtTheLoai.Text != "" && txtNamXuatBan.Text != "" && txtGiaSach.Text != "" && txtSoLuong.Text != "")
             {
                 string tensach = txtTenSach.Text;
                 string tacgia = txtTacGia.Text;
                 string theloai = txtTheLoai.Text;
                 int namxuatban = int.Parse(txtNamXuatBan.Text);
-                long gia = long.Parse(txtGia.Text);
+                long gia = long.Parse(txtGiaSach.Text);
                 int soluong = int.Parse(txtSoLuong.Text);
 
                 using (var dataContext = new LVNDataContext())

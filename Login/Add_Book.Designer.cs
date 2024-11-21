@@ -40,7 +40,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtGia = new System.Windows.Forms.TextBox();
+            this.txtGiaSach = new System.Windows.Forms.TextBox();
             this.txtTheLoai = new System.Windows.Forms.TextBox();
             this.txtTacGia = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.txtSoLuong);
-            this.panel2.Controls.Add(this.txtGia);
+            this.panel2.Controls.Add(this.txtGiaSach);
             this.panel2.Controls.Add(this.txtTheLoai);
             this.panel2.Controls.Add(this.txtTacGia);
             this.panel2.Controls.Add(this.label8);
@@ -200,14 +200,14 @@
             this.txtSoLuong.Size = new System.Drawing.Size(273, 26);
             this.txtSoLuong.TabIndex = 15;
             // 
-            // txtGia
+            // txtGiaSach
             // 
-            this.txtGia.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtGia.Location = new System.Drawing.Point(255, 316);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(273, 26);
-            this.txtGia.TabIndex = 14;
+            this.txtGiaSach.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtGiaSach.Location = new System.Drawing.Point(255, 316);
+            this.txtGiaSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtGiaSach.Name = "txtGiaSach";
+            this.txtGiaSach.Size = new System.Drawing.Size(273, 26);
+            this.txtGiaSach.TabIndex = 14;
             // 
             // txtTheLoai
             // 
@@ -339,7 +339,7 @@
         private System.Windows.Forms.TextBox txtTenSach;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.TextBox txtGia;
+        private System.Windows.Forms.TextBox txtGiaSach;
         private System.Windows.Forms.TextBox txtTheLoai;
         private System.Windows.Forms.TextBox txtTacGia;
         private System.Windows.Forms.Label label8;

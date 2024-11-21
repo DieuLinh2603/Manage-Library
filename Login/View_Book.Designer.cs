@@ -418,6 +418,7 @@
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(350, 39);
             this.txtTenSach.TabIndex = 11;
+            this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
             // 
             // btnLamMoi
             // 
@@ -453,6 +454,7 @@
             this.btnTimKiem.TabIndex = 13;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // View_Book
             // 
