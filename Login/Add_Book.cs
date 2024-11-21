@@ -18,18 +18,17 @@ namespace Login
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            /*
             // Kiểm tra các ô nhập liệu không rỗng
-            if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtTheLoai.Text != "" && txtNamXuatBan.Text != "" && txtGia.Text != "" && txtSoLuong.Text != "")
+            if (txtTenSach.Text != "" && txtTacGia.Text != "" && txtTheLoai.Text != "" && txtNamXuatBan.Text != "" && txtGiaSach.Text != "" && txtSoLuong.Text != "")
             {
                 string tensach = txtTenSach.Text;
                 string tacgia = txtTacGia.Text;
                 string theloai = txtTheLoai.Text;
                 int namxuatban = int.Parse(txtNamXuatBan.Text);
-                long gia = long.Parse(txtGia.Text);
+                long gia = long.Parse(txtGiaSach.Text);
                 int soluong = int.Parse(txtSoLuong.Text);
 
-                using (var dataContext = new DataSachDataContext())
+                using (var dataContext = new LVNDataContext())
                 {
                     // Kiểm tra xem sách đã có trong kho chưa
                     var existingBook = dataContext.Saches.FirstOrDefault(s => s.TenSach == tensach && s.TacGia == tacgia);
@@ -65,18 +64,12 @@ namespace Login
             {
                 MessageBox.Show("Không được để trống các ô nhập liệu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            */
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             var home = new Home();
             this.Close();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
