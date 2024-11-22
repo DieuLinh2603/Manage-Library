@@ -54,7 +54,7 @@ namespace Login
                         dgvTraSach.DataSource = from i in dt.Saches
                                                 from y in dt.DocGias
                                                 from z in dt.LichSuMuonTraSaches
-                                                where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe
+                                                where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe && z.NgayTra == null
                                                 select new
                                                 {
                                                     z.id,
@@ -91,6 +91,7 @@ namespace Login
             {
                 dgvTraSach.Rows.Clear();
                 txtSoThe.Clear();
+                panel2.Hide();
             }
         }
 

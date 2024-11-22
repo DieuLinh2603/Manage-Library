@@ -24,9 +24,11 @@ namespace Login
         {
             using (thlvnDataContext dt = new thlvnDataContext())
             {
-                var kq = dt.Saches.Select(l => l.TenSach).ToList();
+                var kq = dt.Saches
+                           .OrderBy(l => l.TenSach)
+                           .Select(l => l.TenSach)
+                           .ToList();
 
-                // Đổ dữ liệu vào ComboBox
                 cbbTenSach.DataSource = kq;
             }
         }
@@ -93,6 +95,7 @@ namespace Login
             DialogResult f = MessageBox.Show("Ban thuc su muon lam moi du lieu?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (f == DialogResult.Yes)
             {
+                txtSoThe.Clear();
                 txtHoTen.Clear();
                 txtKhoa.Clear();
                 txtSDT.Clear();
@@ -108,46 +111,52 @@ namespace Login
 
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
-            using(thlvnDataContext dt = new thlvnDataContext())
-    {
+            using (thlvnDataContext dt = new thlvnDataContext())
+            {
                 string ten = cbbTenSach.Text;
                 int sothe = int.Parse(txtSoThe.Text);
                 DateTime ngayMuon = DateTime.Parse(dtNgayMuon.Text);
 
-                // Lấy mã sách của cuốn sách mượn
                 int kq = (from i in dt.Saches
                           where i.TenSach.Equals(ten)
                           select i.MaSach).FirstOrDefault();
 
-                // Kiểm tra nếu sách tồn tại trong bảng Saches
                 var sach = dt.Saches.FirstOrDefault(s => s.MaSach == kq);
+
                 if (sach != null && sach.SoLuong > 0)
                 {
-                    // Giảm số lượng sách trong bảng Saches
-                    sach.SoLuong -= 1;
+                    int soSachDaMuon = dt.LichSuMuonTraSaches
+                        .Where(ls => ls.SoThe == sothe && ls.NgayTra == null)
+                        .Count();
 
-                    // Lưu thay đổi vào bảng Saches
-                    dt.SubmitChanges();
+                    if (soSachDaMuon >= 3)
+                    {
+                        MessageBox.Show("Bạn đã mượn tối đa 3 cuốn sách, không thể mượn thêm.");
+                    }
+                    else
+                    {
+                        sach.SoLuong -= 1;
+                        dt.SubmitChanges();
 
-                    // Thêm thông tin mượn sách vào bảng LichSuMuonTraSach
-                    LichSuMuonTraSach ls = new LichSuMuonTraSach();
-                    ls.SoThe = sothe;
-                    ls.MaSach = kq;
-                    ls.NgayMuon = ngayMuon;
-                    ls.NgayTra = null;
+                        LichSuMuonTraSach ls = new LichSuMuonTraSach
+                        {
+                            SoThe = sothe,
+                            MaSach = kq,
+                            NgayMuon = ngayMuon,
+                            NgayTra = null
+                        };
 
-                    dt.LichSuMuonTraSaches.InsertOnSubmit(ls);
-                    dt.SubmitChanges();
+                        dt.LichSuMuonTraSaches.InsertOnSubmit(ls);
+                        dt.SubmitChanges();
 
-                    MessageBox.Show("Đã thêm lịch sử mượn trả sách thành công.");
+                        MessageBox.Show("Đã thêm lịch sử mượn trả sách thành công.");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Sách mà bạn chọn hiện tại đã hết, vui lòng chọn sách khác!");
                 }
             }
-
         }
-        }
-
     }
+}
