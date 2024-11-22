@@ -22,8 +22,7 @@ namespace Login
 
         void loadData()
         {
-            using (db)
-            {
+            
                 dgvTraSach.DataSource = from i in db.Saches
                                         from y in db.DocGias
                                         from z in db.LichSuMuonTraSaches
@@ -38,14 +37,13 @@ namespace Login
                                             z.NgayMuon,
                                             z.NgayTra,
                                         };
-            }
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             
-            using(db)
-            {
+            
                 int soThe;
                 if (int.TryParse(txtSoThe.Text, out soThe))
                 {
@@ -77,7 +75,7 @@ namespace Login
                     MessageBox.Show("Số thẻ độc giả phải được nhập bằng số, Vui lòng thử lại!");
                     txtSoThe.Clear();
                 }
-            }
+            
         }
 
         private void dgvTraSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -121,8 +119,7 @@ namespace Login
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            using (db)
-            {
+           
                 DateTime ngayTra = DateTime.Parse(dtNgayTra.Text);
                 int sothe = int.Parse(txtSoThe.Text);  
                 string tenSach = txtTenSach.Text; 
@@ -158,7 +155,7 @@ namespace Login
                 {
                     MessageBox.Show("Lịch sử mượn sách không tồn tại hoặc sách chưa được mượn.");
                 }
-            }
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

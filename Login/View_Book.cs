@@ -166,5 +166,10 @@ namespace Login
 
             DataGr.DataSource = books.ToList();
         }
+
+        private void View_Book_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

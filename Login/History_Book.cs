@@ -13,7 +13,8 @@ namespace Login
     public partial class History_Book : Form
     {
         LVNDataContext db = new LVNDataContext();
-        int MaxNgayMuon = 90;
+        const int Ngay_Han = 150;
+        const double Phi_Phat = 2000;
         public History_Book()
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace Login
                           b.TenSach,
                           a.NgayMuon,
                           a.NgayTra,
-                          PhiPhat = (a.NgayTra - a.NgayMuon).Value.Days > MaxNgayMuon ? b.GiaSach : 0
+                          PhiPhat = (a.NgayTra - a.NgayMuon).Value.Days > Ngay_Han ? (a.NgayTra - a.NgayMuon).Value.Days * Phi_Phat : 0
                       };
             dtgv_TraSach.DataSource = rst;
         }

@@ -23,13 +23,12 @@ namespace Login
 
         private void Borrow_Book_Load(object sender, EventArgs e)
         {
-            using (db)
-            {
+            
                 var kq = db.Saches.Select(l => l.TenSach).ToList();
 
                 // Đổ dữ liệu vào ComboBox
                 cbbTenSach.DataSource = kq;
-            }
+            
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -49,8 +48,7 @@ namespace Login
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (db)
-            {
+            
                 int soThe;
                 if (int.TryParse(txtSoThe.Text, out soThe))
                 {
@@ -64,7 +62,7 @@ namespace Login
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy nhân viên.");
+                        MessageBox.Show("Không tìm thấy độc giả!");
                         txtHoTen.Clear();
                         txtKhoa.Clear();
                         txtSDT.Clear();
@@ -75,7 +73,7 @@ namespace Login
                 {
                     MessageBox.Show("Số thẻ độc giả phải được nhập bằng số, Vui lòng thử lại!");
                 }
-            }
+            
 
         }
 
@@ -109,8 +107,7 @@ namespace Login
 
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
-            using(db)
-    {
+            
                 string ten = cbbTenSach.Text;
                 int sothe = int.Parse(txtSoThe.Text);
                 DateTime ngayMuon = DateTime.Parse(dtNgayMuon.Text);
@@ -146,7 +143,7 @@ namespace Login
                 {
                     MessageBox.Show("Sách mà bạn chọn hiện tại đã hết, vui lòng chọn sách khác!");
                 }
-            }
+            
 
         }
         }
