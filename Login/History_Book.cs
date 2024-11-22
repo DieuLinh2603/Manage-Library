@@ -16,5 +16,15 @@ namespace Login
         {
             InitializeComponent();
         }
+        public void loadData()
+        {
+            LVNDataContext data = new LVNDataContext();
+            dataGridView1.DataSource = from i in data.LichSuMuonTraSaches
+                                       select i;
+        }
+        private void History_Book_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
