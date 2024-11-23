@@ -62,7 +62,7 @@ namespace Login
             try
             {
                 var login = db.TaiKhoans.FirstOrDefault(u => u.TaiKhoan1 == user && u.MatKhau == password);
-
+                
                 if (login != null)
                 {
                     Home home = new Home();

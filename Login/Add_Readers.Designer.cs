@@ -113,17 +113,6 @@
             this.panel2.TabIndex = 3;
             // 
             // txtSdt
-            // textBox4
-            // 
-            /*
-            this.textBox4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox4.Location = new System.Drawing.Point(227, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(243, 22);
-            this.textBox4.TabIndex = 21;
-            */
-            // 
-            // button2
             // 
             this.txtSdt.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSdt.Location = new System.Drawing.Point(227, 223);
@@ -199,7 +188,6 @@
             this.label8.Size = new System.Drawing.Size(63, 25);
             this.label8.TabIndex = 10;
             this.label8.Text = "Khoa";
-            //this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -262,6 +250,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
+            this.MinimizeBox = false;
             this.Name = "Add_Readers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Readers";

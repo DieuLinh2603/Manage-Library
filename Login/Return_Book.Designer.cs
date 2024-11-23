@@ -347,6 +347,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvTraSach);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Return_Book";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Return_Book";

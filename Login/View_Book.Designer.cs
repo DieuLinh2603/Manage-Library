@@ -453,6 +453,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.DataGr);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "View_Book";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View_Book";

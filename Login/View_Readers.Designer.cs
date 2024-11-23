@@ -34,6 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Data = new System.Windows.Forms.DataGridView();
+            this.SoThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSoThe = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -52,11 +57,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SoThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
@@ -120,6 +120,47 @@
             this.Data.RowTemplate.Height = 24;
             this.Data.Size = new System.Drawing.Size(1112, 304);
             this.Data.TabIndex = 2;
+            // 
+            // SoThe
+            // 
+            this.SoThe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoThe.DataPropertyName = "SoThe";
+            this.SoThe.HeaderText = "Số thẻ";
+            this.SoThe.MaxInputLength = 10000;
+            this.SoThe.MinimumWidth = 6;
+            this.SoThe.Name = "SoThe";
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 200;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 170;
+            // 
+            // Nganh
+            // 
+            this.Nganh.DataPropertyName = "Khoa";
+            this.Nganh.HeaderText = "Ngành";
+            this.Nganh.MinimumWidth = 6;
+            this.Nganh.Name = "Nganh";
+            this.Nganh.Width = 170;
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
             // 
             // label4
             // 
@@ -341,47 +382,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Họ tên";
             // 
-            // SoThe
-            // 
-            this.SoThe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoThe.DataPropertyName = "SoThe";
-            this.SoThe.HeaderText = "Số thẻ";
-            this.SoThe.MaxInputLength = 10000;
-            this.SoThe.MinimumWidth = 6;
-            this.SoThe.Name = "SoThe";
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ tên";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 200;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 170;
-            // 
-            // Nganh
-            // 
-            this.Nganh.DataPropertyName = "Khoa";
-            this.Nganh.HeaderText = "Ngành";
-            this.Nganh.MinimumWidth = 6;
-            this.Nganh.Name = "Nganh";
-            this.Nganh.Width = 170;
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
             // View_Readers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,6 +396,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Data);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "View_Readers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View_Readers";
