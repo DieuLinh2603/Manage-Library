@@ -13,6 +13,7 @@ namespace Login
         {
             InitializeComponent();
             LoadData();
+            panel2.Visible = false;
         }
         public void LoadData()
         {
@@ -28,34 +29,38 @@ namespace Login
         {
             txtTenSach.Clear();
             LoadData();
+            panel2.Visible = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
+{
+    string tenSach = txtTenSach2.Text.Trim();
+    LVNDataContext data = new LVNDataContext();
+
+    var sachToDelete = data.Saches.FirstOrDefault(s => s.TenSach == tenSach);
+
+    if (sachToDelete != null)
+    {
+        // Thêm thông báo xác nhận xóa
+        if (MessageBox.Show("Dữ liệu sẽ được xóa. Xác nhận?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
         {
-            string tenSach = txtTenSach2.Text.Trim();
-            LVNDataContext data = new LVNDataContext();
+            var lichSuToDelete = data.LichSuMuonTraSaches.Where(ls => ls.MaSach == sachToDelete.MaSach);
 
-            var sachToDelete = data.Saches.FirstOrDefault(s => s.TenSach == tenSach);
+            data.LichSuMuonTraSaches.DeleteAllOnSubmit(lichSuToDelete);
+            data.Saches.DeleteOnSubmit(sachToDelete);
+            data.SubmitChanges();
 
-            if (sachToDelete != null)
-            {
-                var lichSuToDelete = data.LichSuMuonTraSaches.Where(ls => ls.MaSach == sachToDelete.MaSach);
+            LoadData();
+            panel2.Visible = false;
 
-                data.LichSuMuonTraSaches.DeleteAllOnSubmit(lichSuToDelete);
-
-                data.Saches.DeleteOnSubmit(sachToDelete);
-
-                data.SubmitChanges();
-
-                LoadData();
-
-                MessageBox.Show("Sách và các bản ghi lịch sử mượn trả đã được xóa thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Không tồn tại sách với tên này!");
-            }
+            MessageBox.Show("Sách và các bản ghi lịch sử mượn trả đã được xóa thành công!");
         }
+    }
+    else
+    {
+        MessageBox.Show("Không tồn tại sách với tên này!");
+    }
+}
 
         private void DataGr_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,7 +68,9 @@ namespace Login
             {
                 int bookId = int.Parse(DataGr.Rows[e.RowIndex].Cells[0].Value.ToString());
                 LoadSelectedBookDetails(bookId);
+                panel2.Visible = true;
             }
+
         }
         private void LoadSelectedBookDetails(int bookId)
         {
@@ -89,6 +96,7 @@ namespace Login
         private void btnThoat_Click(object sender, EventArgs e)
         {
             var home = new Home();
+            panel2.Visible = false;
             this.Close();
         }
 
@@ -122,6 +130,7 @@ namespace Login
                             dataContext.SubmitChanges();
                             MessageBox.Show("Cập nhật thành công!");
                             LoadData();
+                            panel2.Visible = false;
                         }
                         else
                         {
@@ -150,6 +159,7 @@ namespace Login
                         select s;
 
             DataGr.DataSource = books.ToList();
+            panel2.Visible = false;
         }
 
         private void txtTenSach_TextChanged(object sender, EventArgs e)
@@ -167,6 +177,7 @@ namespace Login
         private void View_Book_Load(object sender, EventArgs e)
         {
 
+            panel2.Visible = false;
         }
     }
 }
