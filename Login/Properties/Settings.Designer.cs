@@ -55,5 +55,16 @@ namespace Login.Properties {
                 return ((string)(this["LVNConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\SQLEXPRESS;Initial Catalog=LVN;Integrated Security=True;Encrypt=T" +
+            "rue;TrustServerCertificate=True")]
+        public string LVNConnectionString {
+            get {
+                return ((string)(this["LVNConnectionString"]));
+            }
+        }
     }
 }
