@@ -22,10 +22,11 @@ namespace Login
 
         void loadData()
         {
-            
-                dgvTraSach.DataSource = from i in db.Saches
-                                        from y in db.DocGias
-                                        from z in db.LichSuMuonTraSaches
+            using (LVNDataContext ts = new LVNDataContext())
+            {
+                dgvTraSach.DataSource = from i in ts.Saches
+                                        from y in ts.DocGias
+                                        from z in ts.LichSuMuonTraSaches
                                         where i.MaSach == z.MaSach && y.SoThe == z.SoThe
                                         select new
                                         {
@@ -43,17 +44,18 @@ namespace Login
         private void btnSearch_Click(object sender, EventArgs e)
         {
             
-            
+            using(LVNDataContext dt = new LVNDataContext())
+            {
                 int soThe;
                 if (int.TryParse(txtSoThe.Text, out soThe))
                 {
                     var kq = db.LichSuMuonTraSaches.FirstOrDefault(p => p.SoThe.Equals(soThe));
                     if (kq != null)
                     {
-                        dgvTraSach.DataSource = from i in db.Saches
-                                                from y in db.DocGias
-                                                from z in db.LichSuMuonTraSaches
-                                                where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe
+                        dgvTraSach.DataSource = from i in dt.Saches
+                                                from y in dt.DocGias
+                                                from z in dt.LichSuMuonTraSaches
+                                                where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe && z.NgayTra == null
                                                 select new
                                                 {
                                                     z.id,
@@ -90,6 +92,7 @@ namespace Login
             {
                 dgvTraSach.Rows.Clear();
                 txtSoThe.Clear();
+                panel2.Hide();
             }
         }
 
@@ -119,7 +122,8 @@ namespace Login
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-           
+            using (LVNDataContext dt = new LVNDataContext())
+            {
                 DateTime ngayTra = DateTime.Parse(dtNgayTra.Text);
                 int sothe = int.Parse(txtSoThe.Text);  
                 string tenSach = txtTenSach.Text; 

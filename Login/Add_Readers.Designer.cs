@@ -115,11 +115,13 @@
             // txtSdt
             // textBox4
             // 
+            /*
             this.textBox4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox4.Location = new System.Drawing.Point(227, 223);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(243, 22);
             this.textBox4.TabIndex = 21;
+            */
             // 
             // button2
             // 
@@ -197,7 +199,7 @@
             this.label8.Size = new System.Drawing.Size(63, 25);
             this.label8.TabIndex = 10;
             this.label8.Text = "Khoa";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            //this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 

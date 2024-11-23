@@ -251,6 +251,7 @@
             // cbbTenSach
             // 
             this.cbbTenSach.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbbTenSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTenSach.FormattingEnabled = true;
             this.cbbTenSach.Location = new System.Drawing.Point(205, 243);
             this.cbbTenSach.Name = "cbbTenSach";
@@ -263,6 +264,7 @@
             this.txtEmail.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtEmail.Location = new System.Drawing.Point(205, 189);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(243, 22);
             this.txtEmail.TabIndex = 9;
             // 
@@ -304,6 +306,7 @@
             this.txtSDT.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtSDT.Location = new System.Drawing.Point(205, 137);
             this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
             this.txtSDT.Size = new System.Drawing.Size(243, 22);
             this.txtSDT.TabIndex = 5;
             // 
@@ -323,6 +326,7 @@
             this.txtKhoa.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtKhoa.Location = new System.Drawing.Point(205, 87);
             this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.ReadOnly = true;
             this.txtKhoa.Size = new System.Drawing.Size(243, 22);
             this.txtKhoa.TabIndex = 3;
             // 
@@ -343,6 +347,7 @@
             this.txtHoTen.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtHoTen.Location = new System.Drawing.Point(205, 30);
             this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.ReadOnly = true;
             this.txtHoTen.Size = new System.Drawing.Size(243, 22);
             this.txtHoTen.TabIndex = 1;
             // 

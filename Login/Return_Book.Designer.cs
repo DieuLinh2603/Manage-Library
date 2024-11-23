@@ -347,7 +347,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1160, 508);
+            this.ClientSize = new System.Drawing.Size(1131, 501);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvTraSach);
             this.Controls.Add(this.panel1);
