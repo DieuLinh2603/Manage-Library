@@ -61,9 +61,9 @@ namespace Login.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\SQLEXPRESS;Initial Catalog=LVN;Integrated Security=True;Encrypt=T" +
             "rue;TrustServerCertificate=True")]
-        public string LVNConnectionString {
+        public string LVNConnectionString3 {
             get {
-                return ((string)(this["LVNConnectionString"]));
+                return ((string)(this["LVNConnectionString3"]));
             }
         }
     }

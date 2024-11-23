@@ -63,6 +63,7 @@ namespace Login
         {
             LoadData();
             txtSoThe.Clear ();
+            panel2.Hide();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -145,6 +146,7 @@ namespace Login
 
         private void Data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            panel2.Show();
             // Kiểm tra dòng hợp lệ
             if (e.RowIndex >= 0 && e.RowIndex < Data.Rows.Count)
             {
