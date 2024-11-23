@@ -112,6 +112,17 @@
             this.panel2.Size = new System.Drawing.Size(638, 429);
             this.panel2.TabIndex = 3;
             // 
+            // txtSdt
+            // textBox4
+            // 
+            /*
+            this.textBox4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox4.Location = new System.Drawing.Point(227, 223);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(243, 22);
+            this.textBox4.TabIndex = 21;
+            */
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -177,7 +188,8 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 25);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Ngành";
+            this.label8.Text = "Khoa";
+            //this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
