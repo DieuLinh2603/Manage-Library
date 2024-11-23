@@ -21,7 +21,7 @@ namespace Login
 
         void loadData()
         {
-            using (thlvnDataContext ts = new thlvnDataContext())
+            using (LVNDataContext ts = new LVNDataContext())
             {
                 dgvTraSach.DataSource = from i in ts.Saches
                                         from y in ts.DocGias
@@ -43,7 +43,7 @@ namespace Login
         private void btnSearch_Click(object sender, EventArgs e)
         {
             
-            using(thlvnDataContext dt = new thlvnDataContext())
+            using(LVNDataContext dt = new LVNDataContext())
             {
                 int soThe;
                 if (int.TryParse(txtSoThe.Text, out soThe))
@@ -121,7 +121,7 @@ namespace Login
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            using (thlvnDataContext dt = new thlvnDataContext())
+            using (LVNDataContext dt = new LVNDataContext())
             {
                 DateTime ngayTra = DateTime.Parse(dtNgayTra.Text);
                 int sothe = int.Parse(txtSoThe.Text);  

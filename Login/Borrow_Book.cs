@@ -22,7 +22,7 @@ namespace Login
 
         private void Borrow_Book_Load(object sender, EventArgs e)
         {
-            using (thlvnDataContext dt = new thlvnDataContext())
+            using (LVNDataContext dt = new LVNDataContext())
             {
                 var kq = dt.Saches
                            .OrderBy(l => l.TenSach)
@@ -50,7 +50,7 @@ namespace Login
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (thlvnDataContext dt = new thlvnDataContext())
+            using (LVNDataContext dt = new LVNDataContext())
             {
                 int soThe;
                 if (int.TryParse(txtSoThe.Text, out soThe))
@@ -111,7 +111,7 @@ namespace Login
 
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
-            using (thlvnDataContext dt = new thlvnDataContext())
+            using (LVNDataContext dt = new LVNDataContext())
             {
                 string ten = cbbTenSach.Text;
                 int sothe = int.Parse(txtSoThe.Text);
