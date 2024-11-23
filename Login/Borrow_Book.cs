@@ -31,53 +31,39 @@ namespace Login
                            .ToList();
 
                 cbbTenSach.DataSource = kq;
+            }
             
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSoThe_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (LVNDataContext dt = new LVNDataContext())
-            {
-                int soThe;
-                if (int.TryParse(txtSoThe.Text, out soThe))
+                using (LVNDataContext dt = new LVNDataContext())
                 {
-                    var kq = db.DocGias.FirstOrDefault(p => p.SoThe.Equals(soThe));
-                    if (kq != null)
+                    int soThe;
+                    if (int.TryParse(txtSoThe.Text, out soThe))
                     {
-                        txtHoTen.Text = kq.HoTen;
-                        txtKhoa.Text = kq.Khoa;
-                        txtSDT.Text = kq.SDT;
-                        txtEmail.Text = kq.Email;
+                        var kq = db.DocGias.FirstOrDefault(p => p.SoThe.Equals(soThe));
+                        if (kq != null)
+                        {
+                            txtHoTen.Text = kq.HoTen;
+                            txtKhoa.Text = kq.Khoa;
+                            txtSDT.Text = kq.SDT;
+                            txtEmail.Text = kq.Email;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy độc giả!");
+                            txtHoTen.Clear();
+                            txtKhoa.Clear();
+                            txtSDT.Clear();
+                            txtEmail.Clear();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy độc giả!");
-                        txtHoTen.Clear();
-                        txtKhoa.Clear();
-                        txtSDT.Clear();
-                        txtEmail.Clear();
+                        MessageBox.Show("Số thẻ độc giả phải được nhập bằng số, Vui lòng thử lại!");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Số thẻ độc giả phải được nhập bằng số, Vui lòng thử lại!");
-                }
-            
 
         }
 
@@ -91,26 +77,12 @@ namespace Login
 
         }
 
-        private void btnRefesh_Click(object sender, EventArgs e)
-        {
-            DialogResult f = MessageBox.Show("Ban thuc su muon lam moi du lieu?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (f == DialogResult.Yes)
-            {
-                txtSoThe.Clear();
-                txtHoTen.Clear();
-                txtKhoa.Clear();
-                txtSDT.Clear();
-                txtEmail.Clear();
-            }
-
-        }
-
         private void cbbTenSach_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btnMuonSach_Click(object sender, EventArgs e)
+        private void btnMuonSach_Click_1(object sender, EventArgs e)
         {
             using (LVNDataContext dt = new LVNDataContext())
             {
@@ -157,6 +129,19 @@ namespace Login
                 {
                     MessageBox.Show("Sách mà bạn chọn hiện tại đã hết, vui lòng chọn sách khác!");
                 }
+            }
+        }
+
+        private void btnRefesh_Click_1(object sender, EventArgs e)
+        {
+            DialogResult f = MessageBox.Show("Ban thuc su muon lam moi du lieu?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (f == DialogResult.Yes)
+            {
+                txtSoThe.Clear();
+                txtHoTen.Clear();
+                txtKhoa.Clear();
+                txtSDT.Clear();
+                txtEmail.Clear();
             }
         }
     }

@@ -38,51 +38,45 @@ namespace Login
                                             z.NgayMuon,
                                             z.NgayTra,
                                         };
-            
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
-            using(LVNDataContext dt = new LVNDataContext())
-            {
-                int soThe;
-                if (int.TryParse(txtSoThe.Text, out soThe))
+                using (LVNDataContext dt = new LVNDataContext())
                 {
-                    var kq = db.LichSuMuonTraSaches.FirstOrDefault(p => p.SoThe.Equals(soThe));
-                    if (kq != null)
+                    int soThe;
+                    if (int.TryParse(txtSoThe.Text, out soThe))
                     {
-                        dgvTraSach.DataSource = from i in dt.Saches
-                                                from y in dt.DocGias
-                                                from z in dt.LichSuMuonTraSaches
-                                                where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe && z.NgayTra == null
-                                                select new
-                                                {
-                                                    z.id,
-                                                    z.SoThe,
-                                                    y.HoTen,
-                                                    y.Email,
-                                                    i.TenSach,
-                                                    z.NgayMuon,
-                                                    z.NgayTra,
-                                                };
+                        var kq = db.LichSuMuonTraSaches.FirstOrDefault(p => p.SoThe.Equals(soThe));
+                        if (kq != null)
+                        {
+                            dgvTraSach.DataSource = from i in dt.Saches
+                                                    from y in dt.DocGias
+                                                    from z in dt.LichSuMuonTraSaches
+                                                    where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe && z.NgayTra == null
+                                                    select new
+                                                    {
+                                                        z.id,
+                                                        z.SoThe,
+                                                        y.HoTen,
+                                                        y.Email,
+                                                        i.TenSach,
+                                                        z.NgayMuon,
+                                                        z.NgayTra,
+                                                    };
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy số thẻ độc giả.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy số thẻ độc giả.");
+                        MessageBox.Show("Số thẻ độc giả phải được nhập bằng số, Vui lòng thử lại!");
+                        txtSoThe.Clear();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Số thẻ độc giả phải được nhập bằng số, Vui lòng thử lại!");
-                    txtSoThe.Clear();
-                }
-            
-        }
-
-        private void dgvTraSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -105,15 +99,7 @@ namespace Login
             }
         }
 
-        private void txtSoThe_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbbListBooks_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void Return_Book_Load(object sender, EventArgs e)
         {
@@ -122,55 +108,47 @@ namespace Login
 
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            using (LVNDataContext dt = new LVNDataContext())
-            {
-                DateTime ngayTra = DateTime.Parse(dtNgayTra.Text);
-                int sothe = int.Parse(txtSoThe.Text);  
-                string tenSach = txtTenSach.Text; 
-
-                int maSach = (from s in db.Saches
-                              where s.TenSach.Equals(tenSach)
-                              select s.MaSach).FirstOrDefault();
-
-                LichSuMuonTraSach ls = db.LichSuMuonTraSaches
-                                         .FirstOrDefault(l => l.SoThe == sothe && l.MaSach == maSach && l.NgayTra == null);
-
-                if (ls != null)
+                using (LVNDataContext dt = new LVNDataContext())
                 {
-                    ls.NgayTra = ngayTra;
-                    db.SubmitChanges();
+                    DateTime ngayTra = DateTime.Parse(dtNgayTra.Text);
+                    int sothe = int.Parse(txtSoThe.Text);
+                    string tenSach = txtTenSach.Text;
 
-                    Sach sach = db.Saches.FirstOrDefault(s => s.MaSach == maSach);
-                    if (sach != null)
+                    int maSach = (from s in db.Saches
+                                  where s.TenSach.Equals(tenSach)
+                                  select s.MaSach).FirstOrDefault();
+
+                    LichSuMuonTraSach ls = db.LichSuMuonTraSaches
+                                             .FirstOrDefault(l => l.SoThe == sothe && l.MaSach == maSach && l.NgayTra == null);
+
+                    if (ls != null)
                     {
-                        sach.SoLuong += 1;
+                        ls.NgayTra = ngayTra;
                         db.SubmitChanges();
-                        MessageBox.Show("Đã trả sách thành công.");
-                        dgvTraSach.Rows.Clear();
-                        txtSoThe.Clear();
-                        panel2.Hide();
+
+                        Sach sach = db.Saches.FirstOrDefault(s => s.MaSach == maSach);
+                        if (sach != null)
+                        {
+                            sach.SoLuong += 1;
+                            db.SubmitChanges();
+                            MessageBox.Show("Đã trả sách thành công.");
+                            dgvTraSach.Rows.Clear();
+                            txtSoThe.Clear();
+                            panel2.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy sách trong cơ sở dữ liệu.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy sách trong cơ sở dữ liệu.");
+                        MessageBox.Show("Lịch sử mượn sách không tồn tại hoặc sách chưa được mượn.");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Lịch sử mượn sách không tồn tại hoặc sách chưa được mượn.");
-                }
-            
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void txtTenSach_MouseClick(object sender, MouseEventArgs e)
         {
@@ -178,10 +156,7 @@ namespace Login
             txtNgayMuon.Text = dgvTraSach.CurrentRow.Cells[6].Value.ToString();
         }
 
-        private void dgvTraSach_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            
-        }
+       
 
         private void dgvTraSach_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -190,9 +165,5 @@ namespace Login
             txtNgayMuon.Text = dgvTraSach.CurrentRow.Cells[5].Value.ToString();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
     }
 }

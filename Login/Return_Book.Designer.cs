@@ -131,7 +131,6 @@
             this.txtSoThe.Name = "txtSoThe";
             this.txtSoThe.Size = new System.Drawing.Size(281, 34);
             this.txtSoThe.TabIndex = 3;
-            this.txtSoThe.TextChanged += new System.EventHandler(this.txtSoThe_TextChanged);
             // 
             // label3
             // 
@@ -170,9 +169,7 @@
             this.dgvTraSach.RowTemplate.Height = 24;
             this.dgvTraSach.Size = new System.Drawing.Size(765, 455);
             this.dgvTraSach.TabIndex = 2;
-            this.dgvTraSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraSach_CellContentClick);
             this.dgvTraSach.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraSach_CellContentDoubleClick);
-            this.dgvTraSach.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvTraSach_MouseDoubleClick);
             // 
             // id
             // 
@@ -245,7 +242,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(765, 200);
             this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txtNgayMuon
             // 
@@ -273,7 +269,6 @@
             this.dtNgayTra.Name = "dtNgayTra";
             this.dtNgayTra.Size = new System.Drawing.Size(243, 30);
             this.dtNgayTra.TabIndex = 15;
-            this.dtNgayTra.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnThoat2
             // 
@@ -290,6 +285,7 @@
             this.btnThoat2.TabIndex = 10;
             this.btnThoat2.Text = "Thoát";
             this.btnThoat2.UseVisualStyleBackColor = false;
+            this.btnThoat2.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnTraSach
             // 

@@ -132,7 +132,7 @@
             this.btnRefesh.TabIndex = 6;
             this.btnRefesh.Text = "Làm mới";
             this.btnRefesh.UseVisualStyleBackColor = false;
-            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click_1);
             // 
             // btnClose
             // 
@@ -175,7 +175,6 @@
             this.txtSoThe.Name = "txtSoThe";
             this.txtSoThe.Size = new System.Drawing.Size(298, 36);
             this.txtSoThe.TabIndex = 2;
-            this.txtSoThe.TextChanged += new System.EventHandler(this.txtSoThe_TextChanged);
             // 
             // label3
             // 
@@ -233,7 +232,7 @@
             this.btnMuonSach.TabIndex = 12;
             this.btnMuonSach.Text = "Mượn";
             this.btnMuonSach.UseVisualStyleBackColor = false;
-            this.btnMuonSach.Click += new System.EventHandler(this.btnMuonSach_Click);
+            this.btnMuonSach.Click += new System.EventHandler(this.btnMuonSach_Click_1);
             // 
             // dtNgayMuon
             // 
@@ -246,7 +245,6 @@
             this.dtNgayMuon.Name = "dtNgayMuon";
             this.dtNgayMuon.Size = new System.Drawing.Size(243, 30);
             this.dtNgayMuon.TabIndex = 11;
-            this.dtNgayMuon.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cbbTenSach
             // 
@@ -257,7 +255,6 @@
             this.cbbTenSach.Name = "cbbTenSach";
             this.cbbTenSach.Size = new System.Drawing.Size(243, 24);
             this.cbbTenSach.TabIndex = 10;
-            this.cbbTenSach.SelectedIndexChanged += new System.EventHandler(this.cbbTenSach_SelectedIndexChanged);
             // 
             // txtEmail
             // 
@@ -340,7 +337,6 @@
             this.label5.Size = new System.Drawing.Size(63, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "Khoa";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtHoTen
             // 
