@@ -38,7 +38,7 @@
             this.txtSoThe = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.infoPanel = new System.Windows.Forms.Panel();
             this.txtSoThe2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtsdt = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.infoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -174,26 +174,26 @@
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // panel2
+            // infoPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Teal;
-            this.panel2.Controls.Add(this.txtSoThe2);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtsdt);
-            this.panel2.Controls.Add(this.btnThoat);
-            this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.btnCapNhat);
-            this.panel2.Controls.Add(this.txtNganh);
-            this.panel2.Controls.Add(this.txtEmail);
-            this.panel2.Controls.Add(this.txtHoTen);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(19, 631);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1117, 356);
-            this.panel2.TabIndex = 14;
+            this.infoPanel.BackColor = System.Drawing.Color.Teal;
+            this.infoPanel.Controls.Add(this.txtSoThe2);
+            this.infoPanel.Controls.Add(this.label6);
+            this.infoPanel.Controls.Add(this.txtsdt);
+            this.infoPanel.Controls.Add(this.btnThoat);
+            this.infoPanel.Controls.Add(this.btnXoa);
+            this.infoPanel.Controls.Add(this.btnCapNhat);
+            this.infoPanel.Controls.Add(this.txtNganh);
+            this.infoPanel.Controls.Add(this.txtEmail);
+            this.infoPanel.Controls.Add(this.txtHoTen);
+            this.infoPanel.Controls.Add(this.label7);
+            this.infoPanel.Controls.Add(this.label5);
+            this.infoPanel.Controls.Add(this.label3);
+            this.infoPanel.Controls.Add(this.label1);
+            this.infoPanel.Location = new System.Drawing.Point(19, 631);
+            this.infoPanel.Name = "infoPanel";
+            this.infoPanel.Size = new System.Drawing.Size(1117, 356);
+            this.infoPanel.TabIndex = 14;
             // 
             // txtSoThe2
             // 
@@ -343,12 +343,12 @@
             // 
             // SoThe
             // 
-            this.SoThe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SoThe.DataPropertyName = "SoThe";
             this.SoThe.HeaderText = "Số thẻ";
             this.SoThe.MaxInputLength = 10000;
             this.SoThe.MinimumWidth = 6;
             this.SoThe.Name = "SoThe";
+            this.SoThe.Width = 260;
             // 
             // HoTen
             // 
@@ -376,11 +376,12 @@
             // 
             // SDT
             // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "SDT";
             this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
+            this.SDT.Width = 259;
             // 
             // View_Readers
             // 
@@ -389,7 +390,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1148, 553);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtSoThe);
@@ -402,8 +403,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.infoPanel.ResumeLayout(false);
+            this.infoPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,7 +421,7 @@
         private System.Windows.Forms.TextBox txtSoThe;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnLamMoi;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnCapNhat;

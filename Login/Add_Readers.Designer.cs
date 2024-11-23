@@ -113,6 +113,7 @@
             this.panel2.TabIndex = 3;
             // 
             // txtSdt
+            // txtSdt
             // textBox4
             // 
             /*

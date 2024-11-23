@@ -16,20 +16,28 @@ namespace Login
         {
             InitializeComponent();
             LoadData ();
+            Data.AllowUserToAddRows = false;
             Data.CellClick += Data_CellClick;
+            infoPanel.Visible = false;
+            txtSoThe.KeyDown += TxtSoThe_KeyDown;
         }
         public void LoadData()
         {
-            LVNDataContext  data = new LVNDataContext();
+            LVNDataContext data = new LVNDataContext();
             Data.DataSource = from i in data.DocGias
                               select i;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            PerformSearch();
+        }
+
+        private void PerformSearch()
+        {
             if (string.IsNullOrWhiteSpace(txtSoThe.Text))
             {
-                MessageBox.Show("Vui lòng nhập số thẻ để tìm kiếm!");
+                MessageBox.Show("Vui lòng nhập số thẻ để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -45,24 +53,23 @@ namespace Login
                 if (result.Any())
                 {
                     Data.DataSource = result;
-                    txtSoThe.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy thông tin với số thẻ này!");
+                    MessageBox.Show("Không tìm thấy thông tin với số thẻ này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
             {
-                MessageBox.Show("Số thẻ phải là một số hợp lệ!");
+                MessageBox.Show("Số thẻ phải là một số hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LoadData();
-            txtSoThe.Clear ();
+            txtSoThe.Clear();
+            infoPanel.Visible = false; // Ẩn Panel khi làm mới
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -81,13 +88,21 @@ namespace Login
 
                 if (delete != null)
                 {
-                    var deleteLichSu = data.LichSuMuonTraSaches.Where(z => z.SoThe == sothe);
-                    data.DocGias.DeleteOnSubmit(delete);
-                    data.LichSuMuonTraSaches.DeleteAllOnSubmit(deleteLichSu);
-                    data.SubmitChanges();
-                    LoadData();
-                    MessageBox.Show("Xóa thành công!");
-                    clear();
+                    // Hiển thị thông báo xác nhận
+                    var confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa thông tin này?",
+                        "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        var deleteLichSu = data.LichSuMuonTraSaches.Where(z => z.SoThe == sothe);
+                        data.DocGias.DeleteOnSubmit(delete);
+                        data.LichSuMuonTraSaches.DeleteAllOnSubmit(deleteLichSu);
+                        data.SubmitChanges();
+                        LoadData();
+                        MessageBox.Show("Xóa thành công!");
+                        clear();
+                        infoPanel.Visible = false; // Ẩn Panel sau khi xóa
+                    }
                 }
                 else
                 {
@@ -98,7 +113,6 @@ namespace Login
             {
                 MessageBox.Show("Số thẻ phải là một số hợp lệ!");
             }
-
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -117,13 +131,20 @@ namespace Login
 
                 if (update != null)
                 {
-                    update.HoTen = txtHoTen.Text.Trim();
-                    update.Email = txtEmail.Text.Trim();
-                    update.Khoa = txtNganh.Text.Trim(); 
-                    update.SDT = txtsdt.Text.Trim();
-                    data.SubmitChanges();
-                    LoadData();
-                    MessageBox.Show("Cập nhật thành công!");
+                    // Hiển thị thông báo xác nhận
+                    var confirm = MessageBox.Show("Bạn có chắc chắn muốn cập nhật thông tin này?",
+                        "Xác nhận cập nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        update.HoTen = txtHoTen.Text.Trim();
+                        update.Email = txtEmail.Text.Trim();
+                        update.Khoa = txtNganh.Text.Trim();
+                        update.SDT = txtsdt.Text.Trim();
+                        data.SubmitChanges();
+                        LoadData();
+                        MessageBox.Show("Cập nhật thành công!");
+                    }
                 }
                 else
                 {
@@ -140,7 +161,6 @@ namespace Login
         {
             var home = new Home();
             this.Close();
-            
         }
 
         private void Data_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -149,6 +169,9 @@ namespace Login
             if (e.RowIndex >= 0 && e.RowIndex < Data.Rows.Count)
             {
                 DataGridViewRow row = Data.Rows[e.RowIndex];
+
+                // Hiển thị Panel
+                infoPanel.Visible = true;
 
                 // Gán giá trị vào các TextBox
                 txtSoThe2.Text = row.Cells["SoThe"].Value?.ToString();
@@ -166,6 +189,16 @@ namespace Login
             txtEmail.Text = string.Empty;
             txtsdt.Text = string.Empty;
             txtNganh.Text = string.Empty;
+        }
+
+        private void TxtSoThe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Kiểm tra nếu phím nhấn là Enter
+            {
+                e.Handled = true; // Ngăn sự kiện mặc định
+                e.SuppressKeyPress = true; // Ngăn tiếng "ding" mặc định của Windows
+                PerformSearch(); // Gọi hàm tìm kiếm
+            }
         }
     }
 
