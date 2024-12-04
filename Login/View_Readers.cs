@@ -169,6 +169,11 @@ namespace Login
             txtsdt.Text = string.Empty;
             txtNganh.Text = string.Empty;
         }
+
+        private void View_Readers_Load(object sender, EventArgs e)
+        {
+            panel2.Hide();
+        }
     }
 
 }

@@ -400,6 +400,7 @@
             this.Name = "View_Readers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View_Readers";
+            this.Load += new System.EventHandler(this.View_Readers_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
