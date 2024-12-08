@@ -82,7 +82,7 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dtgv_MuonSach.Location = new System.Drawing.Point(35, 136);
+            this.dtgv_MuonSach.Location = new System.Drawing.Point(12, 135);
             this.dtgv_MuonSach.Name = "dtgv_MuonSach";
             this.dtgv_MuonSach.RowHeadersWidth = 51;
             this.dtgv_MuonSach.RowTemplate.Height = 24;
@@ -93,7 +93,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Century", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(539, 466);
+            this.label2.Location = new System.Drawing.Point(557, 403);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(286, 51);
             this.label2.TabIndex = 23;
@@ -103,7 +103,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Century", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(539, 82);
+            this.label1.Location = new System.Drawing.Point(518, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(286, 51);
             this.label1.TabIndex = 24;
@@ -112,7 +112,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(795, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(782, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(754, 469);
+            this.pictureBox2.Location = new System.Drawing.Point(755, 406);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -222,7 +222,7 @@
             this.btnTimKiem_Muon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem_Muon.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem_Muon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnTimKiem_Muon.Location = new System.Drawing.Point(1408, 23);
+            this.btnTimKiem_Muon.Location = new System.Drawing.Point(1398, 26);
             this.btnTimKiem_Muon.Name = "btnTimKiem_Muon";
             this.btnTimKiem_Muon.Size = new System.Drawing.Size(111, 56);
             this.btnTimKiem_Muon.TabIndex = 30;
@@ -232,7 +232,7 @@
             // 
             // txtSoTheMuon
             // 
-            this.txtSoTheMuon.Location = new System.Drawing.Point(106, 32);
+            this.txtSoTheMuon.Location = new System.Drawing.Point(137, 85);
             this.txtSoTheMuon.Multiline = true;
             this.txtSoTheMuon.Name = "txtSoTheMuon";
             this.txtSoTheMuon.Size = new System.Drawing.Size(312, 32);
@@ -243,7 +243,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(12, 35);
+            this.label4.Location = new System.Drawing.Point(43, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 29);
             this.label4.TabIndex = 28;
@@ -251,7 +251,7 @@
             // 
             // txtTenSachMuon
             // 
-            this.txtTenSachMuon.Location = new System.Drawing.Point(548, 32);
+            this.txtTenSachMuon.Location = new System.Drawing.Point(579, 85);
             this.txtTenSachMuon.Multiline = true;
             this.txtTenSachMuon.Name = "txtTenSachMuon";
             this.txtTenSachMuon.Size = new System.Drawing.Size(312, 32);
@@ -262,7 +262,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(422, 35);
+            this.label3.Location = new System.Drawing.Point(453, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 29);
             this.label3.TabIndex = 31;
@@ -273,7 +273,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(864, 35);
+            this.label8.Location = new System.Drawing.Point(895, 88);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(144, 29);
             this.label8.TabIndex = 40;
@@ -284,7 +284,7 @@
             this.dtpMuon.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpMuon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpMuon.Location = new System.Drawing.Point(1014, 35);
+            this.dtpMuon.Location = new System.Drawing.Point(1045, 88);
             this.dtpMuon.Name = "dtpMuon";
             this.dtpMuon.Size = new System.Drawing.Size(305, 30);
             this.dtpMuon.TabIndex = 41;
@@ -342,7 +342,7 @@
             this.dtpTra.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTra.Location = new System.Drawing.Point(1014, 418);
+            this.dtpTra.Location = new System.Drawing.Point(1045, 469);
             this.dtpTra.Name = "dtpTra";
             this.dtpTra.Size = new System.Drawing.Size(305, 30);
             this.dtpTra.TabIndex = 48;
@@ -352,7 +352,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(864, 421);
+            this.label5.Location = new System.Drawing.Point(895, 472);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 29);
             this.label5.TabIndex = 47;
@@ -360,7 +360,7 @@
             // 
             // txtTenSachTra
             // 
-            this.txtTenSachTra.Location = new System.Drawing.Point(548, 418);
+            this.txtTenSachTra.Location = new System.Drawing.Point(579, 469);
             this.txtTenSachTra.Multiline = true;
             this.txtTenSachTra.Name = "txtTenSachTra";
             this.txtTenSachTra.Size = new System.Drawing.Size(312, 32);
@@ -371,7 +371,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(422, 421);
+            this.label6.Location = new System.Drawing.Point(453, 472);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 29);
             this.label6.TabIndex = 45;
@@ -396,7 +396,7 @@
             // 
             // txtSoTheTra
             // 
-            this.txtSoTheTra.Location = new System.Drawing.Point(106, 418);
+            this.txtSoTheTra.Location = new System.Drawing.Point(137, 469);
             this.txtSoTheTra.Multiline = true;
             this.txtSoTheTra.Name = "txtSoTheTra";
             this.txtSoTheTra.Size = new System.Drawing.Size(312, 32);
@@ -407,7 +407,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(12, 421);
+            this.label7.Location = new System.Drawing.Point(43, 472);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 29);
             this.label7.TabIndex = 42;
@@ -422,7 +422,7 @@
             this.btnLamMoiMuon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoiMuon.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoiMuon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLamMoiMuon.Location = new System.Drawing.Point(1411, 88);
+            this.btnLamMoiMuon.Location = new System.Drawing.Point(1398, 99);
             this.btnLamMoiMuon.Name = "btnLamMoiMuon";
             this.btnLamMoiMuon.Size = new System.Drawing.Size(111, 56);
             this.btnLamMoiMuon.TabIndex = 49;
@@ -452,7 +452,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1531, 790);
+            this.ClientSize = new System.Drawing.Size(1531, 818);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLamMoiMuon);
             this.Controls.Add(this.dtpTra);

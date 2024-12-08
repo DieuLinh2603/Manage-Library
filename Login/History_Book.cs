@@ -58,13 +58,13 @@ namespace Login
         {
             string txtsoThe = txtSoTheMuon.Text;
             string tenSach = txtTenSachMuon.Text;
-            int soThe = txtsoThe != "" ? Convert.ToInt32(txtsoThe) : 0;
+            int soThe = txtsoThe != "" ? Convert.ToInt32(txtsoThe) : -100;
             DateTime ngayMuon = dtpMuon.Value;
             var rsm = from a in db.LichSuMuonTraSaches
                       from b in db.Saches
                       from c in db.DocGias
                       where a.NgayTra == null && a.SoThe == c.SoThe && a.MaSach == b.MaSach
-                      && a.SoThe == (soThe != 0 ? soThe : a.SoThe)
+                      && a.SoThe == (soThe != -100 ? soThe : a.SoThe)
                       && b.TenSach == (tenSach != "" ? tenSach : b.TenSach)
                       && a.NgayMuon == ngayMuon
                       select new
@@ -122,12 +122,12 @@ namespace Login
             string txtSoThe = txtSoTheTra.Text;
             string tenSach = txtTenSachTra.Text;
             DateTime ngayMuon = dtpTra.Value;
-            int soThe = txtSoThe != "" ? Convert.ToInt32(txtSoThe) : 0;
+            int soThe = txtSoThe != "" ? Convert.ToInt32(txtSoThe) : -100;
             var rsm = from a in db.LichSuMuonTraSaches
                       from b in db.Saches
                       from c in db.DocGias
                       where a.NgayTra != null && a.SoThe == c.SoThe && a.MaSach == b.MaSach
-                      && a.SoThe == (soThe != 0 ? soThe : a.SoThe)
+                      && a.SoThe == (soThe != -100 ? soThe : a.SoThe)
                       && b.TenSach == (tenSach != "" ? tenSach : b.TenSach)
                       && a.NgayMuon == ngayMuon
                       select new
