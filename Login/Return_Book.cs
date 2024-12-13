@@ -51,10 +51,10 @@ namespace Login
                         var kq = db.LichSuMuonTraSaches.FirstOrDefault(p => p.SoThe.Equals(soThe));
                         if (kq != null)
                         {
-                            dgvTraSach.DataSource = from i in dt.Saches
+                            var rs = from i in dt.Saches
                                                     from y in dt.DocGias
                                                     from z in dt.LichSuMuonTraSaches
-                                                    where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe && z.NgayTra == null
+                                                    where i.MaSach == z.MaSach && y.SoThe == z.SoThe && z.SoThe == soThe && z.NgayTra == null 
                                                     select new
                                                     {
                                                         z.id,
@@ -65,7 +65,11 @@ namespace Login
                                                         z.NgayMuon,
                                                         z.NgayTra,
                                                     };
-                        }
+                        if (rs.Any())
+                            dgvTraSach.DataSource = rs;
+                        else
+                            MessageBox.Show("Độc giả này không lịch sử mượn sách nào.");
+                    }
                         else
                         {
                             MessageBox.Show("Không tìm thấy số thẻ độc giả.");
